@@ -25,4 +25,12 @@ def pullSequences(coords):
 
     return sequences
 
+def getAllSequences(*args):
+    uniqueSequences = set()
+    for i in getCoords(*args):
+        for j in pullSequences(i):
+            uniqueSequences.add(j)
+    return uniqueSequences
+
+print(getAllSequences("Palo Alto", "California", "United States"))
 
